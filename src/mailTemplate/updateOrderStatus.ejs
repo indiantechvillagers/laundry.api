@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EDM</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+            font-family: "Hind Siliguri", sans-serif;
+        }
+
+        body {
+            font-family: "Hind Siliguri", sans-serif;
+        }
+
+        span,
+        div {
+            color: #000;
+        }
+
+        .edm_main {
+            margin: auto;
+            margin-top: 60px;
+            padding: 30px;
+            background-color: rgb(247, 248, 255);
+            border-radius: 10px;
+        }
+
+        .edm_logo {
+            width: 100%;
+        }
+
+        .edm_logo img {
+            display: block;
+            width: 300px;
+            height: auto;
+        }
+
+        .client_name {
+            text-align: center;
+            margin-bottom: 10px;
+            margin-top: 5px;
+            color: rgb(53, 53, 53);
+            font-size: clamp(16px, 3vw, 20px);
+        }
+
+        .edm_orderT {
+            font-size: clamp(16px, 3vw, 26px);
+            text-align: center;
+            color: rgb(53, 53, 53);
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .edm_orderT::before {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            width: 6vw;
+            height: 1px;
+            background-color: rgb(136, 136, 136);
+            left: 46%;
+        }
+
+        .edm_rosier_time {
+            padding-top: 20px;
+            text-align: center;
+            font-size: 17px;
+            font-weight: 400;
+            line-height: 24px;
+        }
+
+        .arriving_text {
+            opacity: .67;
+            color: rgb(53, 53, 53);
+            margin: 20px 0 10px 0;
+            text-align: center;
+        }
+
+        .arriving_date {
+            color: rgb(98, 79, 238);
+            font-size: 27px;
+            font-weight: 600;
+            text-align: center;
+            padding-bottom: 2rem;
+        }
+
+        .edm_card {
+            width: 90%;
+            margin: auto;
+        }
+
+        .card_order_tracking {
+            /* padding: 30px 20px 20px 20px; */
+            background-color: rgb(217, 227, 255);
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            background-image: url(https://t4.ftcdn.net/jpg/04/27/21/69/360_F_427216979_4arPHw2nV0S0d0ZW1eGjL2nWHzXyOedJ.jpg);
+            background-size: 100% 100%;
+            width: 100%;
+            height: 250px;
+            position: relative;
+        }
+
+        /* .card_pIMG {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            margin-bottom: 10px;
+        }
+
+        .card_pIMG img {
+            display: block;
+            width: 100%;
+            height: auto;
+        } */
+
+        .card_orderT {
+            width: 100%;
+            padding-bottom: 10px;
+            padding-top: 30px;
+            position: absolute;
+            bottom: 10px;
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+        }
+
+        .card_orderT a {
+            color: rgb(40, 39, 54);
+            background-color: rgb(69, 233, 100);
+            border-radius: 22px;
+            text-decoration: none;
+            padding: 10px 0;
+            display: block;
+            width: 200px;
+            text-align: center;
+            margin: auto;
+        }
+
+        .card_content {
+            padding: 10px 10px;
+            background-color: white;
+            border: 1px solid #d8d8d8;
+        }
+
+        .order_details {
+            font-size: 17px;
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+            padding-left: 5px;
+        }
+
+        .card_product {
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            align-items: start;
+            column-gap: 5%;
+        }
+
+        .CP_image {
+            border: 1px solid #eee;
+            border-radius: 4px;
+            width: 85px;
+            display: grid;
+            place-items: center;
+            height: 85px;
+            padding: 10px;
+        }
+
+        .CP_image img {
+            display: block;
+            width: 100%;
+        }
+
+        .CP_LC div:nth-child(1) {
+            font-size: clamp(10px, 3vw, 20px);
+            margin-bottom: 9px;
+            margin-top: 3px;
+        }
+
+        .CP_LC div+div {
+            font-size: 15px;
+            margin-bottom: 9px;
+        }
+
+        .total_amount {
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid #eee;
+            padding: 15px;
+        }
+
+        .total_amount span {
+            font-size: 16px;
+            font-weight: 600;
+            font-style: normal;
+        }
+
+        .product_details {
+            padding: 20px 5px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .PD_grid {
+            display: flex;
+            align-items: start;
+            padding: 0 10px;
+        }
+
+
+        .PD_COL1 {
+            width: 50%;
+        }
+
+        .PD_COL2 {
+            width: 50%;
+        }
+
+        .PD_grid>div>span {
+            display: block;
+            margin-bottom: 1rem;
+            color: rgb(53, 53, 53);
+        }
+
+        .PD_header {
+            font-size: clamp(16px, 3vw, 18px);
+            font-weight: 600;
+            display: block;
+        }
+
+        .delivery_image {
+            display: block;
+            height: 35px;
+            margin-left: 5px;
+        }
+
+        .SD_img {
+            padding: 5px;
+            width: 100px;
+            height: auto;
+            border: 1px solid #eee;
+            border-radius: 4px;
+        }
+
+        .SD_img img {
+            display: block;
+            width: 60px;
+            margin: auto;
+            height: 80px;
+        }
+
+        .supplier_details {
+            padding: 20px 5px;
+            border-bottom: 1px solid #eee;
+
+        }
+
+        .SD_text {
+            font-size: clamp(12px, 3vw, 16px);
+            margin-bottom: 20px;
+            line-height: 24px;
+        }
+
+        .SD_heading {
+            font-size: 18px;
+            font-weight: 500;
+            margin-bottom: 15px;
+        }
+
+        .SD_details {
+            display: flex;
+            align-items: start;
+            column-gap: 15px;
+        }
+
+        .card_bottomC {
+            padding: 20px 5px;
+            padding-bottom: 40px;
+        }
+
+        .CBC_text1 {
+            font-size: 16px;
+            line-height: 20px;
+            color: rgb(53, 53, 53);
+            margin-bottom: 15px;
+        }
+
+        .CBC_text2 {
+            font-size: 14px;
+            line-height: 20px;
+            color: rgb(53, 53, 53);
+            margin-bottom: 15px;
+        }
+
+        .best_regards {
+            padding-top: 20px;
+        }
+
+        .best_regards div:nth-child(1) {
+            font-size: 18px;
+            color: rgb(53, 53, 53);
+            margin-bottom: 4px;
+        }
+
+        .best_regards div:nth-child(2) {
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        .bg_bottom {
+            width: 100%;
+            height: 35px;
+            background-color: rgb(7, 7, 155);
+            border-bottom-left-radius: 13px;
+            border-bottom-right-radius: 13px;
+        }
+
+
+        @media screen and (max-width: 770px) {
+            .CP_LC div+div {
+                font-size: 13px;
+            }
+
+            .CP_LC div:nth-child(1) {
+                margin: 4px 0 5px 0;
+                font-size: clamp(13px, 3vw, 18px);
+            }
+
+            .PD_COL_text {
+                line-height: 22px;
+                font-size: 14px;
+            }
+
+            .PD_COL>span {
+                margin-bottom: .7rem;
+            }
+
+            .SD_img img {
+                height: 60px;
+            }
+        }
+
+        @media screen and (max-width: 550px) {
+            .card_pIMG img {
+                width: 100%;
+            }
+
+            .card_orderT {
+                padding-top: 10px;
+            }
+
+            .card_orderT a {
+                padding: 5px 25px;
+                font-size: 12px;
+            }
+
+            .order_details {
+                font-size: 12px;
+                padding: 0px 0 8px 5px;
+            }
+
+            .edm_main {
+                padding: 30px 15px;
+            }
+
+            .edm_card {
+                width: 100%;
+            }
+
+            .PD_COL>span {
+                font-size: 12px;
+            }
+
+            .delivery_image {
+                height: 20px;
+            }
+
+            .total_amount span {
+                font-size: 14px;
+            }
+
+            .total_amount {
+                padding: 10px 5px;
+            }
+
+            .CBC_text1 {
+                font-size: 14px;
+            }
+
+            .CBC_text2 {
+                font-size: 12px;
+            }
+
+            .best_regards div:nth-child(1) {
+                font-size: 15px;
+            }
+
+            .best_regards div:nth-child(2) {
+                font-size: 14px;
+            }
+
+            .bg_bottom {
+                height: 25px;
+            }
+
+            .arriving_date {
+                font-size: 23px;
+            }
+
+            .edm_rosier_time {
+                font-size: 15px;
+            }
+        }
+
+        @media screen and (max-width: 380px) {
+            .card_product {
+                flex-direction: column;
+            }
+
+            .CP_image {
+                margin-bottom: 10px;
+            }
+
+            .CP_LC {
+                margin-left: 5px;
+                font-size: 12px;
+            }
+
+            .CP_LC div+div {
+                font-size: 12px;
+            }
+
+            .CP_LC div:nth-child(1) {
+                margin-bottom: 8px;
+            }
+
+            .SD_heading {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="edm_main">
+        <div class="edm_logo">
+            <img src="https://laugh-o-laundry.com/assets/img/LAUNDRY.png" alt="image is not available">
+        </div>
+        <div class="client_name">Dear <%= orderData.address.dataValues.name %>,</div>
+        <div class="edm_orderT">
+            <b>
+                <%= orderData.status.dataValues.statusName %>
+            </b>
+        </div>
+        <!-- <div class="edm_rosier_time">
+            Your Rosier Foods order is arriving earlier than expected and will be delivered <br> today before 7 pm.
+        </div> -->
+        <div class="arriving_text">
+            <%= orderData.arriving_text %>
+        </div>
+        <div class="arriving_date">
+            <%= orderData.arriving_date %>
+        </div>
+        <div>
+        </div>
+        <div class="edm_card">
+            <div class="card_order_tracking">
+                <!-- <div class="card_pIMG">
+                    <img src="https://c884-103-170-177-176.ngrok-free.app/static/close-up-person.jpg"
+                        alt="image is not available">
+                </div> -->
+                <div class="card_orderT">
+                    <a href="https://laugh-o-laundry.com/">Track Your Order</a>
+                </div>
+            </div>
+            <div class="card_content">
+                <div class="order_details"><span><b>Order Details:</b></span><span style="margin-left: 10px;">
+                        Quantity : <%= orderData.orderedCard.dataValues.quantity %>
+                    </span></div>
+                <% cartProduct.forEach(p=>{ %>
+                    <div class="card_product">
+                        <div class="CP_image">
+                            <img src="<%= p.dataValues.product.dataValues.thumbnailImage %>" alt="">
+                        </div>
+                        <div class="CP_LC">
+                            <div>Product Name :<%= p.dataValues.product.dataValues.productName %>
+                            </div>
+                            <div>Qty: <span>1</span> | Price :
+                                ₹<b>
+                                    <%= p.dataValues.product.dataValues.price %>
+                                </b>
+                            </div>
+
+                        </div>
+                    </div>
+                    <% }) %>
+                        <div style="border-bottom: 1px solid #EEE;padding: 7px 15px;">
+                            <div style="font-size: 16px;margin-bottom: 10px;">DeliveryCharge : ₹<span>
+                                    <%= orderData.deliveryCharge %>,
+                                </span>
+                            </div>
+                            <div style="font-size: 16px;margin-bottom: 10px;">Discount : ₹<span>
+                                    <%= orderData.couponDiscountAmount %>,
+                                </span>
+                            </div>
+                            <div style="font-size: 16px;margin-bottom: 10px;">GST : ₹<span>
+                                    <%= orderData.gst %>,
+                                </span>
+                            </div>
+                            <div style="font-size: 16px;">Subtotal : ₹<span>
+                                    <%= orderData.totalPayableAmount %>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="total_amount">
+                            <span style="width: 60%;">Total Amount<b>:</b></span>
+                            <span style="width: 40%;text-align: end;">₹<span>
+                                    <%= orderData.totalPayableAmount %>
+                                </span></span>
+                        </div>
+                        <div class="product_details">
+                            <div class="PD_grid">
+                                <div class="PD_COL1">
+                                    <span class="PD_header">Shipping Details:</span>
+                                    <span>Order ID : <span style="color: rgb(49, 49, 185);">
+                                            <%= orderData.orderId %>
+                                        </span></span>
+                                    <!-- <span style="display: flex;align-items: center;">Courier : <img class="delivery_image"
+                                    src="./delivery.png" alt=""></span>
+                            <span>AWB No. : 19041578476672</span> -->
+                                </div>
+                                <div class="PD_COL2">
+                                    <span class="PD_header">Delivery Address:</span>
+                                    <span>
+                                        <%= orderData.address.dataValues.name %>
+                                    </span>
+                                    <span class="PD_COL_text">
+                                        <%= orderData.address.dataValues.address %>
+                                    </span>
+                                    <span>+91-<%= orderData.address.dataValues.phone %></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="supplier_details">
+                            <div class="SD_text">
+                                Please contact Lough-O-Laundry at <a href="https://laugh-o-laundry.com/">Lough-O-Laundry.com</a> if you have any
+                                product-related query or need help with your order.
+                            </div>
+                            <!-- <div class="SD_heading">Seller Details:</div>
+                    <div class="SD_details">
+                        <div class="SD_img">
+                            <img src="./roister.jpg" alt="">
+                        </div>
+                        <div class="SD_text">
+                            <div>Seller Name: <span>Rosier Foods</span></div>
+                            <div>Phone Number: <span>9711580581</span></div>
+                            <div>Email ID: <a href="#">rosierfoods@gmail.com</a></div>
+                        </div>
+                    </div> -->
+                        </div>
+                        <div class="card_bottomC">
+                            <div class="CBC_text1">
+                                <b>Note</b>: Lough-O-Laundry never request to share phone number, bank account details,
+                                card
+                                number,
+                                CVV or
+                                OTP from its End Users.
+                            </div>
+                            <div class="CBC_text2">
+                                If the outer packaging has been tampered with, ripped, pressed, or is otherwise damaged,
+                                you can
+                                refuse acceptance of the delivery and write your comments on the proof of delivery (POD)
+                                slip
+                                that the delivery executive presents
+                            </div>
+                            <div class="CBC_text2">
+                                If you receive an incorrect or damaged product after delivery, please take pictures or
+                                record a
+                                video of the disputed item and share it with the seller as soon as possible.
+                            </div>
+                            <div class="best_regards">
+                                <div>Best Regards,</div>
+                                <div>Team Lough-O-Laundry</div>
+                            </div>
+                        </div>
+            </div>
+            <div class="bg_bottom"></div>
+        </div>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+
+        .header {
+            width: 100%;
+            height: auto;
+        }
+
+        .header_row {
+            width: 90%;
+            margin: auto;
+            padding: 40px 0px;
+        }
+
+        .header_col_image {
+            max-width: 30%;
+            min-width: 240px;
+            margin: auto;
+            margin-bottom: 30px;
+        }
+
+        .header_col_image img {
+            display: block;
+            width: 100%;
+        }
+
+        .header_col {
+            text-align: center;
+        }
+
+        .header_Htext {
+            font-size: 22px;
+            margin-bottom: 25px;
+            font-family: sans-serif;
+        }
+
+        .header_text {
+            font-size: 16px;
+        }
+
+        .header_text+.header_text {
+            margin-top: 7px;
+        }
+
+        .header_invoice {
+            font-size: 35px;
+            font-family: sans-serif;
+            font-weight: 600;
+            margin-top: 15px;
+        }
+
+        .header_BB {
+            height: 1px;
+            background-color: black;
+            width: 90%;
+            margin: auto;
+        }
+
+        .billTo {
+            position: relative;
+            height: 130px;
+            margin: auto;
+            margin-top: 20px;
+            width: 90%;
+        }
+
+        .billTo_col1 {
+            position: absolute;
+            left: 0;
+        }
+
+        .billTo_col2 {
+            position: absolute;
+            right: 0;
+        }
+
+        .billTo_text {
+            font-weight: 600;
+            font-family: sans-serif;
+        }
+
+        .billTo_text+.billTo_text {
+            margin-top: 15px;
+        }
+
+        .Invoice_input {
+            height: 18px;
+            border: none;
+            border-bottom: 1px solid #9e9e9e;
+            outline: none;
+            text-align: center;
+        }
+
+        .bill_table {
+            width: 90%;
+            margin: 30px auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            border: 1px solid #cfcfcf;
+            padding: 5px;
+            text-align: center;
+        }
+
+        td {
+            min-height: 60px;
+            text-align: center;
+        }
+
+        .total_price {
+            width: 90%;
+            margin: auto;
+            display: flex;
+            justify-content: end;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .total_price>span {
+            border-bottom: 1px solid black;
+            padding: 0 15px 5px 15px;
+            display: flex;
+            position: absolute;
+            right: 0;
+        }
+
+        .total_text {
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .notes {
+            display: grid;
+            grid-template-columns: 130px auto;
+            width: 90%;
+            margin: auto;
+            margin-top: 50px;
+            padding-bottom: 40px;
+            font-family: sans-serif;
+            margin-bottom: 40px;
+        }
+
+        .notes_input {
+            border: none;
+            resize: none;
+            outline: none;
+        }
+
+        @media screen and (max-width: 550px) {
+            .header_row {
+                grid-template-columns: 100%;
+                row-gap: 30px;
+            }
+
+            .header_col_image img {
+                width: 80%;
+                margin: auto;
+            }
+
+            .header_invoice {
+                font-size: 35px;
+            }
+
+            .billTo {
+                display: flex;
+                flex-direction: column;
+                row-gap: 20px;
+            }
+
+            .billTo_col {
+                width: 100%;
+            }
+
+            .total_price>span>div {
+                display: flex;
+            }
+
+            .total_price>span>div>input {
+                width: 90px;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+
+    <div class="header">
+        <div class="header_row">
+            <div class="header_col_image">
+                <img src="https://laugh-o-laundry.com/assets/img/LAUNDRY.png" alt="image is not available">
+            </div>
+            <div class="header_col">
+                <div class="header_Htext">Laugh-O-Laundry</div>
+                <div class="header_text">[Phone Number: +91 7439117221]</div>
+                <div class="header_text">[Email Addess: services@Laugh-O-Laundry.com]</div>
+            </div>
+            <div class="header_col">
+                <div class="header_invoice">Invoice</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header_BB"></div>
+    <div class="header_BB" style="margin-top: 1px;"></div>
+
+    <div class="billTo">
+        <div class="billTo_col1">
+            <div class="billTo_text">
+                <span>Bill To </span>
+                <input type="text" value="<%= cartProduct.billTo %>" class="Invoice_input">
+            </div>
+        </div>
+        <div class="billTo_col2">
+            <div class="billTo_text">
+                <span>Invoice Number</span>
+                <input value="#<%= cartProduct.orderId %>" type="text" class="Invoice_input">
+            </div>
+            <div class="billTo_text">
+                <span>Date</span>
+                <input value="<%= cartProduct.date %>" type="text" class="Invoice_input">
+            </div>
+        </div>
+    </div>
+
+    <div class="bill_table">
+        <table>
+            <tr>
+                <th style="width: 50px;">SL.No</th>
+                <th>Item</th>
+                <th>Quantity</th>
+                <th>MRP(Rs)</th>
+                <th colspan="2">Total Amount(Rs)</th>
+            </tr>
+            <!-- This TR for Loop start -->
+            <% cartProduct.forEach((p,i)=>{ %>
+                <tr>
+                    <td style="width: 50px;">
+                        <%= i %>
+                    </td>
+                    <td>
+                        <%= p.product.productName %>
+                    </td>
+                    <td>
+                        <%= p.quantity %>
+                    </td>
+                    <td>
+                        <%= p.product.price %>
+                    </td>
+                    <td colspan="2">
+                        <%= p.totalPrice %>
+                    </td>
+                </tr>
+                <% }) %>
+                    <!-- This TR for Loop end -->
+                    <tr>
+                        <td></td>
+                        <th style="text-align: center;">Summary</th>
+                        <th style="background-color: #dddcdc;">
+                            <%= cartProduct.totalItem %>
+                        </th>
+                        <th style="background-color: #dddcdc;">
+                            <!-- <%= cartProduct.totalPrice %> -->
+                        </th>
+                        <th style="background-color: #dddcdc;" colspan="2">
+                            <%= cartProduct.totalPrice %>
+                        </th>
+                    </tr>
+                    <!-- if gst available -->
+                    <tr>
+                        <td rowspan="5" colspan="2" style="text-align: center; font-weight: bold;">
+                            <!-- You have SAVED Rs.
+                            <%= orderData.couponDiscountAmount %> on
+                            this
+                            order. -->
+                        </td>
+                        <td colspan="4" style="text-align: center; font-weight: bold;">Tax break-up</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center; font-weight: bold;">GST%</td>
+                        <th>GST</th>
+                        <th>SGST</th>
+                        <th>CGST</th>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center;">5%</td>
+                        <td>
+                            <%= orderData.gst %>
+                        </td>
+                        <td>
+                            <%= orderData.sgst %>
+                        </td>
+                        <td>
+                            <%= orderData.cgst %>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Delivery Charges*</th>
+                        <td colspan="3">
+                            <%= orderData.deliveryCharge %>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Discount</th>
+                        <td colspan="3">
+                            <%= orderData.couponDiscountAmount %>
+                        </td>
+                    </tr>
+                    <!-- if gst available -->
+                    <tr>
+                        <th colspan="3">
+                            Grand Total <br>
+                            <% if (orderData.gst == 0 && orderData.sgst == 0 && orderData.cgst == 0) { %>
+                                <small style="font-size: 12px;">(Tax: Inclusive in final amount)</small>
+                            <% } %>
+                        </th>
+                        <th colspan="3">
+                            <%= orderData.totalPayableAmount %>
+                        </th>
+                    </tr>
+        </table>
+    </div>
+
+    <!-- <div class="total_price">
+        <span>
+            <div>
+                <span class="total_text">Total Rs.</span>
+                <input type="text" value="<%= cartProduct.total %>" class="Invoice_input" style="border: none;">
+            </div>
+        </span>
+    </div> -->
+
+    <!-- <div class="notes">
+        <div>Notes And Terms:</div>
+        <textarea rows="3" class="notes_input"></textarea>
+    </div> -->
+
+
+
+</body>
+
+</html>

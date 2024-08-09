@@ -1,0 +1,4040 @@
+{
+	"info": {
+		"_postman_id": "3df38f76-7392-4b19-8f90-ee22ec328943",
+		"name": "LaundryService",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "2641281"
+	},
+	"item": [
+		{
+			"name": "Adnins",
+			"item": [
+				{
+					"name": "Users",
+					"item": [
+						{
+							"name": "Add new admin User",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjksImlhdCI6MTcwODkzNTUyNCwiZXhwIjoxNzA4OTM5MTI0fQ.fT5Ly2m12z4cFYsiaSzk-Ba71tfbc5H1wu8g-RjxnLE",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"mahiruddinseikh5@gmail.com\",\r\n    \"password\": \"1234\",\r\n    \"name\": \"Mahiruddin Seikh\",\r\n    \"roleId\": 1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/admin/user",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"admin",
+										"user"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Admin Login",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"admin@laundry.com\",\r\n    \"password\": \"1234\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/admin/login",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"admin",
+										"login"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get all users - active users",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjMsImlhdCI6MTcwODg5MzYxOSwiZXhwIjoxNzA4ODk3MjE5fQ.VbTlquQL9Y5gKCHBQOq-fUQwZw7V6T2zM7cBPidRyXU",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"mahiruddinseikh@gmail.com\",\r\n    \"password\": \"1234\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/admin/users",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"admin",
+										"users"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get specific user profile by userId",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTcwODkyODgyNSwiZXhwIjoxNzA4OTMyNDI1fQ.lQaVsBcCWQupKKf_lu2vlH0m4jGgWkFgCHvh4j4-fCs",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"mahiruddinseikh1@gmail.com\",\r\n    \"password\": \"1234\",\r\n    \"name\":\"Mahiruddin Seikh\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/admin/user/1/profile",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"admin",
+										"user",
+										"1",
+										"profile"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Soft delete - specific user with userId",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjksImlhdCI6MTcwODkzMjUyMywiZXhwIjoxNzA4OTM2MTIzfQ.14T-D98l9NCe-iLSrSD0idz1vHuNLdrCaJvHxXozP1Y",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/admin/user/5/delete",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"admin",
+										"user",
+										"5",
+										"delete"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update specific user with userId",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjksImlhdCI6MTcwODkzMjUyMywiZXhwIjoxNzA4OTM2MTIzfQ.14T-D98l9NCe-iLSrSD0idz1vHuNLdrCaJvHxXozP1Y",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"Kele Sona\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/admin/user/5/update",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"admin",
+										"user",
+										"5",
+										"update"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update logged user profile",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjksImlhdCI6MTcwODkzMjUyMywiZXhwIjoxNzA4OTM2MTIzfQ.14T-D98l9NCe-iLSrSD0idz1vHuNLdrCaJvHxXozP1Y",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"Sona Kele\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/admin/user/update",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"admin",
+										"user",
+										"update"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get all customer list",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTcxMTAyMDY2MSwiZXhwIjoxNzExMDU2NjYxfQ.tWFZeXvdfMjNzroGuMakKSYxXsGG2ifAaLN8gToYTpg",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/admin/customers",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"admin",
+										"customers"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Pincode",
+					"item": [
+						{
+							"name": "Add new ",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTcwODk0NDA0MCwiZXhwIjoxNzA4OTQ3NjQwfQ.HUNSZp2eCizUsbkLqIdJQ4Ir3EKXCR6QFqE4dZ7__iQ",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"pincode\": \"713409\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/admin/pincode",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"admin",
+										"pincode"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get all pincodes",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTcwODk0NDA0MCwiZXhwIjoxNzA4OTQ3NjQwfQ.HUNSZp2eCizUsbkLqIdJQ4Ir3EKXCR6QFqE4dZ7__iQ",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"pincode\": \"713409\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/admin/pincodes",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"admin",
+										"pincodes"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get specific",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTcwODk0NDA0MCwiZXhwIjoxNzA4OTQ3NjQwfQ.HUNSZp2eCizUsbkLqIdJQ4Ir3EKXCR6QFqE4dZ7__iQ",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/admin/pincode/2",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"admin",
+										"pincode",
+										"2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update specific",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTcwODk0NDA0MCwiZXhwIjoxNzA4OTQ3NjQwfQ.HUNSZp2eCizUsbkLqIdJQ4Ir3EKXCR6QFqE4dZ7__iQ",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"pincode\": \"713410\",\r\n    \"isActive\": false\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/admin/pincode/1",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"admin",
+										"pincode",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "soft delete",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTcwODk0NDA0MCwiZXhwIjoxNzA4OTQ3NjQwfQ.HUNSZp2eCizUsbkLqIdJQ4Ir3EKXCR6QFqE4dZ7__iQ",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/admin/pincode/1",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"admin",
+										"pincode",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Category",
+					"item": [
+						{
+							"name": "Add new ",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTcwODk0ODIxNiwiZXhwIjoxNzA4OTUxODE2fQ.YNpaSCTx2uTm00tH4O7HW1fl7SUk04I-voi65dwCrGI",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"categoryName\": \"Wash & Fold\",\r\n    \"serial\": 2\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/admin/category",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"admin",
+										"category"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get all active list",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTcxMDgyODM3MSwiZXhwIjoxNzEwODY0MzcxfQ.NN7BWcRUgzRhnayOiSk8MnnGXZx5-yLUaRrQt8JV5bM",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://laugh-o-laundry.com:3000/admin/categories",
+									"protocol": "http",
+									"host": [
+										"laugh-o-laundry",
+										"com"
+									],
+									"port": "3000",
+									"path": [
+										"admin",
+										"categories"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get specific category data",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTcwODk0ODIxNiwiZXhwIjoxNzA4OTUxODE2fQ.YNpaSCTx2uTm00tH4O7HW1fl7SUk04I-voi65dwCrGI",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/admin/category/1",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"admin",
+										"category",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update specific category data",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTcwODk0ODIxNiwiZXhwIjoxNzA4OTUxODE2fQ.YNpaSCTx2uTm00tH4O7HW1fl7SUk04I-voi65dwCrGI",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"categoryName\": \"Wash & Iron2\",\r\n    \"serial\": 3\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/admin/category/1",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"admin",
+										"category",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "soft delete specific category data",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTcwODk0ODIxNiwiZXhwIjoxNzA4OTUxODE2fQ.YNpaSCTx2uTm00tH4O7HW1fl7SUk04I-voi65dwCrGI",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/admin/category/1",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"admin",
+										"category",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Subcategory",
+					"item": [
+						{
+							"name": "Add new ",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTcwODk0ODIxNiwiZXhwIjoxNzA4OTUxODE2fQ.YNpaSCTx2uTm00tH4O7HW1fl7SUk04I-voi65dwCrGI",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"subCategoryName\": \"Wash & Fold\",\r\n    \"subCategoryImage\": \"subCategoryImage\",\r\n    \"thumbnailImage\": \"thumbnailImage\",\r\n    \"categoryId\": 3,\r\n    \"serial\": 2\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/admin/subcategory",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"admin",
+										"subcategory"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get all sub categories list",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTcwODk0ODIxNiwiZXhwIjoxNzA4OTUxODE2fQ.YNpaSCTx2uTm00tH4O7HW1fl7SUk04I-voi65dwCrGI",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/admin/subcategories",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"admin",
+										"subcategories"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get specific subcategories data",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTcwODk0ODIxNiwiZXhwIjoxNzA4OTUxODE2fQ.YNpaSCTx2uTm00tH4O7HW1fl7SUk04I-voi65dwCrGI",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/admin/subcategory/2",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"admin",
+										"subcategory",
+										"2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "soft delete subcategory",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTcwODk0ODIxNiwiZXhwIjoxNzA4OTUxODE2fQ.YNpaSCTx2uTm00tH4O7HW1fl7SUk04I-voi65dwCrGI",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/admin/subcategory/2",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"admin",
+										"subcategory",
+										"2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update specific data",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTcwODk0ODIxNiwiZXhwIjoxNzA4OTUxODE2fQ.YNpaSCTx2uTm00tH4O7HW1fl7SUk04I-voi65dwCrGI",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"subCategoryName\": \"Women's Wear\",\r\n    \"subCategoryImage\": \"subCategoryImage\",\r\n    \"thumbnailImage\": \"thumbnailImage\",\r\n    \"categoryId\": 3,\r\n    \"serial\": 5\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/admin/subcategory/3",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"admin",
+										"subcategory",
+										"3"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Role",
+					"item": [
+						{
+							"name": "Add new ",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTcwODk2MzA1MywiZXhwIjoxNzA4OTY2NjUzfQ.RRGXb1eHDdRfcR0DOESDomfCmii7xoaX3mztD-smxsY",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"roleName\": \"Customer 2\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/admin/role",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"admin",
+										"role"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get all active roles",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTcwODk2MzA1MywiZXhwIjoxNzA4OTY2NjUzfQ.RRGXb1eHDdRfcR0DOESDomfCmii7xoaX3mztD-smxsY",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/admin/roles",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"admin",
+										"roles"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get specific role data",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTcwODk2MzA1MywiZXhwIjoxNzA4OTY2NjUzfQ.RRGXb1eHDdRfcR0DOESDomfCmii7xoaX3mztD-smxsY",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/admin/role/1",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"admin",
+										"role",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update specific role data",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTcwODk2MzA1MywiZXhwIjoxNzA4OTY2NjUzfQ.RRGXb1eHDdRfcR0DOESDomfCmii7xoaX3mztD-smxsY",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/admin/role/1",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"admin",
+										"role",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "soft delete specific role data",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTcwODk2MzA1MywiZXhwIjoxNzA4OTY2NjUzfQ.RRGXb1eHDdRfcR0DOESDomfCmii7xoaX3mztD-smxsY",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/admin/role/1",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"admin",
+										"role",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Products",
+					"item": [
+						{
+							"name": "Add new product",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTcwODk2NTYwNCwiZXhwIjoxNzA4OTY5MjA0fQ.Eg2Gwkz-kAmdX3N9NAN0tYmvwuOOlds3YNtu3Mc5z2w",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"productName\": \"Kurta\",\r\n    \"thumbnailImage\": \"thumbnailImage\",\r\n    \"price\": 1050,\r\n    \"categoryId\": 3,\r\n    \"subCategoryId\":3\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/admin/product",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"admin",
+										"product"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get all active product list",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTcwODk2NTYwNCwiZXhwIjoxNzA4OTY5MjA0fQ.Eg2Gwkz-kAmdX3N9NAN0tYmvwuOOlds3YNtu3Mc5z2w",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/admin/products",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"admin",
+										"products"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get specific product info",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTcwODk2NTYwNCwiZXhwIjoxNzA4OTY5MjA0fQ.Eg2Gwkz-kAmdX3N9NAN0tYmvwuOOlds3YNtu3Mc5z2w",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/admin/product/1",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"admin",
+										"product",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update product data",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTcwODk2NTYwNCwiZXhwIjoxNzA4OTY5MjA0fQ.Eg2Gwkz-kAmdX3N9NAN0tYmvwuOOlds3YNtu3Mc5z2w",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"productName\": \"Kurta 2\",\r\n    \"thumbnailImage\": \"thumbnailImage\",\r\n    \"price\": 1250,\r\n    \"categoryId\": 3,\r\n    \"subCategoryId\":3\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/admin/product/1",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"admin",
+										"product",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete specific product data",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTcwODk2NTYwNCwiZXhwIjoxNzA4OTY5MjA0fQ.Eg2Gwkz-kAmdX3N9NAN0tYmvwuOOlds3YNtu3Mc5z2w",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/admin/product/1",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"admin",
+										"product",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "add image to product",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTcwODk2NTYwNCwiZXhwIjoxNzA4OTY5MjA0fQ.Eg2Gwkz-kAmdX3N9NAN0tYmvwuOOlds3YNtu3Mc5z2w",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"productImage\": \"productImage\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/admin/product/1/image",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"admin",
+										"product",
+										"1",
+										"image"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update product image data with productImageId",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTcwODk2NTYwNCwiZXhwIjoxNzA4OTY5MjA0fQ.Eg2Gwkz-kAmdX3N9NAN0tYmvwuOOlds3YNtu3Mc5z2w",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"productImage\": \"productImage2\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/admin/image/1",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"admin",
+										"image",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete product image with productImageId",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTcwODk2NTYwNCwiZXhwIjoxNzA4OTY5MjA0fQ.Eg2Gwkz-kAmdX3N9NAN0tYmvwuOOlds3YNtu3Mc5z2w",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/admin/image/1",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"admin",
+										"image",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Slots",
+					"item": [
+						{
+							"name": "Add new ",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTcwOTgwNzM3OCwiZXhwIjoxNzA5ODQzMzc4fQ.525xuJbSPItqvP36Dyuk_-WWwPGbPsqlL1VLzp2myGQ",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"day\": \"Sunday\",\r\n    \"time\": \"10AM - 3PM\",\r\n    \"slotLimit\": 5\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/admin/slot",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"admin",
+										"slot"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get all active slots",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTcwOTA1NDE2MywiZXhwIjoxNzA5MDU3NzYzfQ.F2LHJsvX2z5-d6QkbqTXNGKk377MIB_qkxfCm5B0reQ",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/admin/slots",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"admin",
+										"slots"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get specific slot",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTcwOTA1NDE2MywiZXhwIjoxNzA5MDU3NzYzfQ.F2LHJsvX2z5-d6QkbqTXNGKk377MIB_qkxfCm5B0reQ",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/admin/slot/1",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"admin",
+										"slot",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update specific slot",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTcwOTA1NDE2MywiZXhwIjoxNzA5MDU3NzYzfQ.F2LHJsvX2z5-d6QkbqTXNGKk377MIB_qkxfCm5B0reQ",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"day\": \"Monday\",\r\n    \"time\": \"9 AM - 10 AM\",\r\n    \"slotLimit\": 50,\r\n    \"isActive\": true\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/admin/slot/1",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"admin",
+										"slot",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete specific slot",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTcwOTA1NDE2MywiZXhwIjoxNzA5MDU3NzYzfQ.F2LHJsvX2z5-d6QkbqTXNGKk377MIB_qkxfCm5B0reQ",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/admin/slot/1",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"admin",
+										"slot",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get available slots",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTcxMDAxNjc3NiwiZXhwIjoxNzEwMDUyNzc2fQ.17Z1MLJ3tOZtrqXzdboZ_31Sh3O41j-kmiY6pAyWsT4",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/admin/getavailableslots",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"admin",
+										"getavailableslots"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "DeliveryCharges",
+					"item": [
+						{
+							"name": "Add new ",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTcwOTk4OTIxMywiZXhwIjoxNzEwMDI1MjEzfQ.5K7_y7auJK18oiqJvt2krr17VdSF5L4yrj2oaTpSpag",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"deliveryChargeTypeId\": 2,\r\n    \"deliveryChargeAmount\": 100,\r\n    \"pinCode\": \"710410\",\r\n    \"minOrderAmount\": 2000\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/admin/deliverycharge",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"admin",
+										"deliverycharge"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get specific delivery charge info",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTcwOTA1NDE2MywiZXhwIjoxNzA5MDU3NzYzfQ.F2LHJsvX2z5-d6QkbqTXNGKk377MIB_qkxfCm5B0reQ",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/admin/deliverycharge/1",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"admin",
+										"deliverycharge",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get all active delivery charges",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTcwOTA1NDE2MywiZXhwIjoxNzA5MDU3NzYzfQ.F2LHJsvX2z5-d6QkbqTXNGKk377MIB_qkxfCm5B0reQ",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/admin/deliverycharges",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"admin",
+										"deliverycharges"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update specific delivery charge info",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTcwOTA1NDE2MywiZXhwIjoxNzA5MDU3NzYzfQ.F2LHJsvX2z5-d6QkbqTXNGKk377MIB_qkxfCm5B0reQ",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"deliveryChargeAmount\": 90,\r\n    \"pinCode\": \"713410\",\r\n    \"isActive\": false\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/admin/deliverycharge/1",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"admin",
+										"deliverycharge",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete specific delivery charge info",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTcwOTA1NDE2MywiZXhwIjoxNzA5MDU3NzYzfQ.F2LHJsvX2z5-d6QkbqTXNGKk377MIB_qkxfCm5B0reQ",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/admin/deliverycharge/1",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"admin",
+										"deliverycharge",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Coupons",
+					"item": [
+						{
+							"name": "add new coupon",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTcwOTA1ODk4MCwiZXhwIjoxNzA5MDYyNTgwfQ.A-m59r8WI-1ZNOk16wJ8VpVZCYhLiWcp4NW6ruKTSto",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"couponCode\": \"XYZ3\",\r\n    \"discountType\": \"PERCENTAGE\",\r\n    \"discountAmount\": 20,\r\n    \"couponTypeId\": 2,\r\n    \"minOrderAmount\": 2000\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/admin/coupon",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"admin",
+										"coupon"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get all coupon lists",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTcwOTA1ODk4MCwiZXhwIjoxNzA5MDYyNTgwfQ.A-m59r8WI-1ZNOk16wJ8VpVZCYhLiWcp4NW6ruKTSto",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/admin/coupons",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"admin",
+										"coupons"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get specific coupon data",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTcwOTA1ODk4MCwiZXhwIjoxNzA5MDYyNTgwfQ.A-m59r8WI-1ZNOk16wJ8VpVZCYhLiWcp4NW6ruKTSto",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/admin/coupon/1",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"admin",
+										"coupon",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete specific coupon data",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTcwOTA1ODk4MCwiZXhwIjoxNzA5MDYyNTgwfQ.A-m59r8WI-1ZNOk16wJ8VpVZCYhLiWcp4NW6ruKTSto",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/admin/coupon/6",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"admin",
+										"coupon",
+										"6"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update specific coupon data",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTcwOTA1ODk4MCwiZXhwIjoxNzA5MDYyNTgwfQ.A-m59r8WI-1ZNOk16wJ8VpVZCYhLiWcp4NW6ruKTSto",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"discountType\": \"FLAT\",\r\n    \"discountAmount\": 200,\r\n    \"couponTypeId\": 2\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/admin/coupon/1",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"admin",
+										"coupon",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Review&Ratings",
+					"item": [
+						{
+							"name": "add new review rating",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTcwOTA1ODk4MCwiZXhwIjoxNzA5MDYyNTgwfQ.A-m59r8WI-1ZNOk16wJ8VpVZCYhLiWcp4NW6ruKTSto",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"reviews\": \"Medium service\",\r\n    \"ratings\": 4.0\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/admin/reviewrating",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"admin",
+										"reviewrating"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get all review and ratings",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTcwOTA1ODk4MCwiZXhwIjoxNzA5MDYyNTgwfQ.A-m59r8WI-1ZNOk16wJ8VpVZCYhLiWcp4NW6ruKTSto",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/admin/reviewratings",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"admin",
+										"reviewratings"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get specific review and ratings",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTcwOTA1ODk4MCwiZXhwIjoxNzA5MDYyNTgwfQ.A-m59r8WI-1ZNOk16wJ8VpVZCYhLiWcp4NW6ruKTSto",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/admin/reviewrating/1",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"admin",
+										"reviewrating",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "approve review and ratings",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTcwOTA1ODk4MCwiZXhwIjoxNzA5MDYyNTgwfQ.A-m59r8WI-1ZNOk16wJ8VpVZCYhLiWcp4NW6ruKTSto",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/admin/reviewrating/2/approve",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"admin",
+										"reviewrating",
+										"2",
+										"approve"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update specific review rating data",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTcwOTA1ODk4MCwiZXhwIjoxNzA5MDYyNTgwfQ.A-m59r8WI-1ZNOk16wJ8VpVZCYhLiWcp4NW6ruKTSto",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"isActive\": true,\r\n    \"ratings\": 4.6\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/admin/reviewrating/2",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"admin",
+										"reviewrating",
+										"2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete specific review rating data",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTcwOTA1ODk4MCwiZXhwIjoxNzA5MDYyNTgwfQ.A-m59r8WI-1ZNOk16wJ8VpVZCYhLiWcp4NW6ruKTSto",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/admin/reviewrating/2",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"admin",
+										"reviewrating",
+										"2"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "ContactUs",
+					"item": [
+						{
+							"name": "add contact us",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTcwOTU3MTgwMywiZXhwIjoxNzA5NTc1NDAzfQ.xf9cFrbwtZzARyvJVYcRpM4bxLZs3mMkizI65YStTFo",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"Name\": \"Mahiruddin Seikh\",\r\n    \"Email\": \"Mahiruddin Seikh\",\r\n    \"Phone\": \"9832910997\",\r\n    \"Message\": \"Need help\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "208.109.188.236:3000/admin/contactUs",
+									"host": [
+										"208",
+										"109",
+										"188",
+										"236"
+									],
+									"port": "3000",
+									"path": [
+										"admin",
+										"contactUs"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Orders",
+					"item": [
+						{
+							"name": "Get all orders",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTcxMDA1Mjc4OCwiZXhwIjoxNzEwMDg4Nzg4fQ.t_-idJWD-6eE0gxT8vqsbdEjleRl9rPKR3nC0dE0gpc",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/admin/orders",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"admin",
+										"orders"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get specific order by orderId",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTcxMDA1Mjc4OCwiZXhwIjoxNzEwMDg4Nzg4fQ.t_-idJWD-6eE0gxT8vqsbdEjleRl9rPKR3nC0dE0gpc",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/admin/order/2",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"admin",
+										"order",
+										"2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "order statuses for dropdown",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTcxMDA1Mjc4OCwiZXhwIjoxNzEwMDg4Nzg4fQ.t_-idJWD-6eE0gxT8vqsbdEjleRl9rPKR3nC0dE0gpc",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/admin/orderstatuses/dd",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"admin",
+										"orderstatuses",
+										"dd"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "all order statuses",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTcxMDA1Mjc4OCwiZXhwIjoxNzEwMDg4Nzg4fQ.t_-idJWD-6eE0gxT8vqsbdEjleRl9rPKR3nC0dE0gpc",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/admin/orderstatuses",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"admin",
+										"orderstatuses"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update order status by admin",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTcxMDA1Mjc4OCwiZXhwIjoxNzEwMDg4Nzg4fQ.t_-idJWD-6eE0gxT8vqsbdEjleRl9rPKR3nC0dE0gpc",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"orderStatusId\": 2\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/admin/order/7/updateorderstatus",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"admin",
+										"order",
+										"7",
+										"updateorderstatus"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "filter order by order status id",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTcxMDA1Mjc4OCwiZXhwIjoxNzEwMDg4Nzg4fQ.t_-idJWD-6eE0gxT8vqsbdEjleRl9rPKR3nC0dE0gpc",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/admin/order/1/filterorder",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"admin",
+										"order",
+										"1",
+										"filterorder"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update payment status",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTcxMDY1NzM0NywiZXhwIjoxNzEwNjkzMzQ3fQ.Uj_UqFZ7_joGCuCuzsW1XbQV8s3oEgBY0AEAyXU6A-E",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"paymentStatus\": \"Paid\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{LAUNDRY_LOCAL}}:3000/admin/order/16/updatepaymentstatus",
+									"host": [
+										"{{LAUNDRY_LOCAL}}"
+									],
+									"port": "3000",
+									"path": [
+										"admin",
+										"order",
+										"16",
+										"updatepaymentstatus"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Labels of specific order with order id",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTcxMTgyMzg3NSwiZXhwIjoxNzExODU5ODc1fQ.HsgWWrS1GsuGuW7BLyDGPD-tApPCHuL8gTPtjF_B5sk",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{LAUNDRY_LOCAL}}:3000/admin/order/20/labels",
+									"host": [
+										"{{LAUNDRY_LOCAL}}"
+									],
+									"port": "3000",
+									"path": [
+										"admin",
+										"order",
+										"20",
+										"labels"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Feedback",
+					"item": [
+						{
+							"name": "approve feedback",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTcwOTA1ODk4MCwiZXhwIjoxNzA5MDYyNTgwfQ.A-m59r8WI-1ZNOk16wJ8VpVZCYhLiWcp4NW6ruKTSto",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/admin/feedback/2/approve",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"admin",
+										"feedback",
+										"2",
+										"approve"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "add new feedback",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTcxMDUyNjI1MywiZXhwIjoxNzEwNTYyMjUzfQ.91MHenzP8hgOtUwKlIN8Su9f_TFqXnuPLbNQvsq0hnM",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"feedbackNotes\":\"Feedback added\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/admin/feedback",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"admin",
+										"feedback"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get all feedbacks",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTcxMDUyNjI1MywiZXhwIjoxNzEwNTYyMjUzfQ.91MHenzP8hgOtUwKlIN8Su9f_TFqXnuPLbNQvsq0hnM",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/admin/feedbacks",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"admin",
+										"feedbacks"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get specific feedback by feedbackId",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTcxMDUyNjI1MywiZXhwIjoxNzEwNTYyMjUzfQ.91MHenzP8hgOtUwKlIN8Su9f_TFqXnuPLbNQvsq0hnM",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/admin/feedback/1",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"admin",
+										"feedback",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Testimonials",
+					"item": [
+						{
+							"name": "add new Testimonial",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTcxMDUyNjI1MywiZXhwIjoxNzEwNTYyMjUzfQ.91MHenzP8hgOtUwKlIN8Su9f_TFqXnuPLbNQvsq0hnM",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"authorName\":\"Feedback added\",\r\n    \"notes\":\"Test notes \"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/admin/testimonial",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"admin",
+										"testimonial"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get all Testimonials",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTcxMDUyNjI1MywiZXhwIjoxNzEwNTYyMjUzfQ.91MHenzP8hgOtUwKlIN8Su9f_TFqXnuPLbNQvsq0hnM",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"authorName\":\"Feedback added\",\r\n    \"notes\":\"Test notes \"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/admin/testimonials",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"admin",
+										"testimonials"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get specific Testimonial",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTcxMDUyNjI1MywiZXhwIjoxNzEwNTYyMjUzfQ.91MHenzP8hgOtUwKlIN8Su9f_TFqXnuPLbNQvsq0hnM",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"authorName\":\"Feedback added\",\r\n    \"notes\":\"Test notes \"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/admin/testimonial/1",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"admin",
+										"testimonial",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "approve Testimonial",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTcxMDUyNjI1MywiZXhwIjoxNzEwNTYyMjUzfQ.91MHenzP8hgOtUwKlIN8Su9f_TFqXnuPLbNQvsq0hnM",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/admin/testimonial/1/approve",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"admin",
+										"testimonial",
+										"1",
+										"approve"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "updateTestimonial data",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTcxMDUyNjI1MywiZXhwIjoxNzEwNTYyMjUzfQ.91MHenzP8hgOtUwKlIN8Su9f_TFqXnuPLbNQvsq0hnM",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"isActive\": false\r\n    // \"showInUI\": false,\r\n    // \"notes\": \"Test\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/admin/testimonial/1",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"admin",
+										"testimonial",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Notification",
+					"item": [
+						{
+							"name": "add new notification",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTcxMDUyNjI1MywiZXhwIjoxNzEwNTYyMjUzfQ.91MHenzP8hgOtUwKlIN8Su9f_TFqXnuPLbNQvsq0hnM",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"notificationTitle\":\"Feedback added\",\r\n    \"notificationMessage\":\"Test notes \",\r\n    \"notificationType\":\"Test notes \",\r\n    \"notificationFor\":\"Test notes\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/admin/notification",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"admin",
+										"notification"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get all notifications",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTcxMDUyNjI1MywiZXhwIjoxNzEwNTYyMjUzfQ.91MHenzP8hgOtUwKlIN8Su9f_TFqXnuPLbNQvsq0hnM",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/admin/notifications",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"admin",
+										"notifications"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get specific notifications",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTcxMDUyNjI1MywiZXhwIjoxNzEwNTYyMjUzfQ.91MHenzP8hgOtUwKlIN8Su9f_TFqXnuPLbNQvsq0hnM",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/admin/notification/1",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"admin",
+										"notification",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "read notification ",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTcxMDUyNjI1MywiZXhwIjoxNzEwNTYyMjUzfQ.91MHenzP8hgOtUwKlIN8Su9f_TFqXnuPLbNQvsq0hnM",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"isRead\": true\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/admin/notification/1",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"admin",
+										"notification",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "notifications for logged user",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTcxMDUyNjI1MywiZXhwIjoxNzEwNTYyMjUzfQ.91MHenzP8hgOtUwKlIN8Su9f_TFqXnuPLbNQvsq0hnM",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/admin/user/notifications",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"admin",
+										"user",
+										"notifications"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get all notifications For New Order",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTcxMTAyMDY2MSwiZXhwIjoxNzExMDU2NjYxfQ.tWFZeXvdfMjNzroGuMakKSYxXsGG2ifAaLN8gToYTpg",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/admin/notificationForNewOrder",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"admin",
+										"notificationForNewOrder"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Files",
+					"item": [
+						{
+							"name": "Upload new file",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTcxMDg3NDAwMSwiZXhwIjoxNzEwOTEwMDAxfQ.xDsHi_2FEp5EbvJjnXZmDHa0lZdUiqTzNT1CAVzchuE",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "file",
+											"type": "file",
+											"src": "/C:/Users/DELL/OneDrive/Desktop/OIP.jpeg"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{LAUNDRY_LOCAL}}:3000/admin/file/upload",
+									"host": [
+										"{{LAUNDRY_LOCAL}}"
+									],
+									"port": "3000",
+									"path": [
+										"admin",
+										"file",
+										"upload"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get all files",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTcxMDg3NDAwMSwiZXhwIjoxNzEwOTEwMDAxfQ.xDsHi_2FEp5EbvJjnXZmDHa0lZdUiqTzNT1CAVzchuE",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "file",
+											"type": "file",
+											"src": "/C:/Users/DELL/OneDrive/Desktop/OIP.jpeg"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{LAUNDRY_LOCAL}}:3000/admin/file/getall",
+									"host": [
+										"{{LAUNDRY_LOCAL}}"
+									],
+									"port": "3000",
+									"path": [
+										"admin",
+										"file",
+										"getall"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get specific file details",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTcxMDg3NDAwMSwiZXhwIjoxNzEwOTEwMDAxfQ.xDsHi_2FEp5EbvJjnXZmDHa0lZdUiqTzNT1CAVzchuE",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "file",
+											"type": "file",
+											"src": "/C:/Users/DELL/OneDrive/Desktop/OIP.jpeg"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{LAUNDRY_LOCAL}}:3000/admin/file/3",
+									"host": [
+										"{{LAUNDRY_LOCAL}}"
+									],
+									"port": "3000",
+									"path": [
+										"admin",
+										"file",
+										"3"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete file",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTcxMDg3NDAwMSwiZXhwIjoxNzEwOTEwMDAxfQ.xDsHi_2FEp5EbvJjnXZmDHa0lZdUiqTzNT1CAVzchuE",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{LAUNDRY_LOCAL}}:3000/admin/file/7",
+									"host": [
+										"{{LAUNDRY_LOCAL}}"
+									],
+									"port": "3000",
+									"path": [
+										"admin",
+										"file",
+										"7"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Refunds",
+					"item": [
+						{
+							"name": "Get all refund requests",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTcxMTQ0OTQ3MiwiZXhwIjoxNzExNDg1NDcyfQ.iKoNG5kJFlsWu1r-5qvoh5gexQAWLncBKUUjXpw_qZs",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"pincode\": \"713409\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/admin/refunds",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"admin",
+										"refunds"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Change refund status",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTcxMTQ0OTQ3MiwiZXhwIjoxNzExNDg1NDcyfQ.iKoNG5kJFlsWu1r-5qvoh5gexQAWLncBKUUjXpw_qZs",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"refundStatusId\": 2,\r\n    \"adminNotes\": \"Processing\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/admin/refund/3/changeStatus",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"admin",
+										"refund",
+										"3",
+										"changeStatus"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "CustomerApp",
+			"item": [
+				{
+					"name": "HomeScreen",
+					"item": [
+						{
+							"name": "Get all banners",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://208.109.188.236:3000/customer/banners",
+									"protocol": "http",
+									"host": [
+										"208",
+										"109",
+										"188",
+										"236"
+									],
+									"port": "3000",
+									"path": [
+										"customer",
+										"banners"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get all Services",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/customer/services",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"customer",
+										"services"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get last order",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTcxMDgyODM3MSwiZXhwIjoxNzEwODY0MzcxfQ.NN7BWcRUgzRhnayOiSk8MnnGXZx5-yLUaRrQt8JV5bM",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{LAUNDRY_DEV}}:3000/customer/order/previous",
+									"host": [
+										"{{LAUNDRY_DEV}}"
+									],
+									"port": "3000",
+									"path": [
+										"customer",
+										"order",
+										"previous"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get all orders of logged in user.",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTcxMDgyODM3MSwiZXhwIjoxNzEwODY0MzcxfQ.NN7BWcRUgzRhnayOiSk8MnnGXZx5-yLUaRrQt8JV5bM",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{LAUNDRY_DEV}}:3000/customer/orders",
+									"host": [
+										"{{LAUNDRY_DEV}}"
+									],
+									"port": "3000",
+									"path": [
+										"customer",
+										"orders"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get specific order's details",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjUsImlhdCI6MTcxMTI5Nzg4MCwiZXhwIjoxNzExMzMzODgwfQ.W_230dm2j-4b41nsWXutX553RGvnTSgesc0BFNh9D-U",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{LAUNDRY_LOCAL}}:3000/customer/order/15",
+									"host": [
+										"{{LAUNDRY_LOCAL}}"
+									],
+									"port": "3000",
+									"path": [
+										"customer",
+										"order",
+										"15"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "check serviceable are with pincode",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"pincode\":\"713401\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{LAUNDRY_DEV}}:3000/customer/checkpincode",
+									"host": [
+										"{{LAUNDRY_DEV}}"
+									],
+									"port": "3000",
+									"path": [
+										"customer",
+										"checkpincode"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get all reviews",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://208.109.188.236:3000/customer/reviews",
+									"protocol": "http",
+									"host": [
+										"208",
+										"109",
+										"188",
+										"236"
+									],
+									"port": "3000",
+									"path": [
+										"customer",
+										"reviews"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "home screen data in single api",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/customer/homescreendata",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"customer",
+										"homescreendata"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "ServiceListingPage",
+					"item": [
+						{
+							"name": "Get all products by subcategory id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{LAUNDRY_DEV}}:3000/customer/subcategory/1/products",
+									"host": [
+										"{{LAUNDRY_DEV}}"
+									],
+									"port": "3000",
+									"path": [
+										"customer",
+										"subcategory",
+										"1",
+										"products"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "add to cart",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjUsImlhdCI6MTcxMTI5Nzg4MCwiZXhwIjoxNzExMzMzODgwfQ.W_230dm2j-4b41nsWXutX553RGvnTSgesc0BFNh9D-U",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"productId\": 2,\r\n    \"quantity\": 1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/customer/addtocart",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"customer",
+										"addtocart"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get cart of user",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjUsImlhdCI6MTcxMTI5Nzg4MCwiZXhwIjoxNzExMzMzODgwfQ.W_230dm2j-4b41nsWXutX553RGvnTSgesc0BFNh9D-U",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{LAUNDRY_LOCAL}}:3000/customer/getusercart",
+									"host": [
+										"{{LAUNDRY_LOCAL}}"
+									],
+									"port": "3000",
+									"path": [
+										"customer",
+										"getusercart"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "edit car item by cartProductId",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjUsImlhdCI6MTcxMTI5Nzg4MCwiZXhwIjoxNzExMzMzODgwfQ.W_230dm2j-4b41nsWXutX553RGvnTSgesc0BFNh9D-U",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"quantity\": 10\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/customer/editcartitem/17",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"customer",
+										"editcartitem",
+										"17"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete cart item by cartProductId",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjUsImlhdCI6MTcxMTI5Nzg4MCwiZXhwIjoxNzExMzMzODgwfQ.W_230dm2j-4b41nsWXutX553RGvnTSgesc0BFNh9D-U",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/customer/deletecartitem/18",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"customer",
+										"deletecartitem",
+										"18"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get available slots",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjUsImlhdCI6MTcxMTI5Nzg4MCwiZXhwIjoxNzExMzMzODgwfQ.W_230dm2j-4b41nsWXutX553RGvnTSgesc0BFNh9D-U",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{LAUNDRY_LOCAL}}:3000/customer/getavailableslots",
+									"host": [
+										"{{LAUNDRY_LOCAL}}"
+									],
+									"port": "3000",
+									"path": [
+										"customer",
+										"getavailableslots"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "User address",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjUsImlhdCI6MTcxMTI5Nzg4MCwiZXhwIjoxNzExMzMzODgwfQ.W_230dm2j-4b41nsWXutX553RGvnTSgesc0BFNh9D-U",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/customer/getalladdress",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"customer",
+										"getalladdress"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get delivery charge",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjUsImlhdCI6MTcxMTI5Nzg4MCwiZXhwIjoxNzExMzMzODgwfQ.W_230dm2j-4b41nsWXutX553RGvnTSgesc0BFNh9D-U",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"pinCode\": \"713410\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/customer/getdeliverycharge",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"customer",
+										"getdeliverycharge"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "add new user address",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTcxMDAwMjUxNiwiZXhwIjoxNzEwMDM4NTE2fQ.2OFKD0e34YeeNvHz71UPePtSxBT2UedmAqkOLtlQUkY",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Mahiruddin Seikh\",\r\n    \"phone\": \"9832910997\",\r\n    \"email\": \"mahiruddinseikh@gmail.com\",\r\n    \"addressType\": \"Home\",\r\n    \"address\": \"Vill+P.O - Deara\\r\\nP.S - Kalna\",\r\n    \"landMark\": \"Play ground\",\r\n    \"pin\": \"713409\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/customer/addnewaddress",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"customer",
+										"addnewaddress"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get applicable coupon list",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjUsImlhdCI6MTcxMTI5Nzg4MCwiZXhwIjoxNzExMzMzODgwfQ.W_230dm2j-4b41nsWXutX553RGvnTSgesc0BFNh9D-U",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/customer/getapplicablecouponlist",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"customer",
+										"getapplicablecouponlist"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "apply coupon",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjUsImlhdCI6MTcxMTI5Nzg4MCwiZXhwIjoxNzExMzMzODgwfQ.W_230dm2j-4b41nsWXutX553RGvnTSgesc0BFNh9D-U",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"couponId\": 3\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/customer/applycoupon",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"customer",
+										"applycoupon"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "place order",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjMsImlhdCI6MTcxMTIxNDc1OCwiZXhwIjoxNzExMjUwNzU4fQ.yjPQrXnLU4Z7C0aEdStjMLhiqqUXctzYRiC7RVBe69Y",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"slotId\": 4,\r\n    \"totalPrice\": 8900,\r\n    \"deliveryCharge\": 100,\r\n    \"couponApplied\": \"FIRSTORDER250\",\r\n    \"couponDiscountAmount\": 250,\r\n    \"totalPayableAmount\": 8750,\r\n    // \"cartId\": 2,\r\n    \"paymentTypeId\": 2,\r\n    \"addressId\": 1,\r\n    \"paymentStatus\": \"Paid\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{LAUNDRY_LOCAL}}:3000/customer/placeorder",
+									"host": [
+										"{{LAUNDRY_LOCAL}}"
+									],
+									"port": "3000",
+									"path": [
+										"customer",
+										"placeorder"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Auth",
+					"item": [
+						{
+							"name": "Get OTP",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"phone\":\"9832910997\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{LAUNDRY_DEV}}:3000/customer/getOTP",
+									"host": [
+										"{{LAUNDRY_DEV}}"
+									],
+									"port": "3000",
+									"path": [
+										"customer",
+										"getOTP"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "customer login/register",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"phone\":\"9832910997\",\r\n    \"otp\": \"912585\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/customer/auth",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"customer",
+										"auth"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Refunds",
+					"item": [
+						{
+							"name": "Raise a new refund request",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjMsImlhdCI6MTcxMTQ1MTU3OCwiZXhwIjoxNzExNDg3NTc4fQ.W-0k4NF-yGTYiwyPABgAzMUa1Fn3rwWnbb6Cn_gJ-Cs",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"refundReason\": \"Bad Service Quality\",\r\n    \"orderId\": 7,\r\n    \"refundRequestMethodId\": 1,\r\n    \"upi\": \"9832910997@ybl\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/customer/refundRequest",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"customer",
+										"refundRequest"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get all refund requests",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjMsImlhdCI6MTcxMTQ1MTU3OCwiZXhwIjoxNzExNDg3NTc4fQ.W-0k4NF-yGTYiwyPABgAzMUa1Fn3rwWnbb6Cn_gJ-Cs",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/customer/refundRequests",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"customer",
+										"refundRequests"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}
